@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import tr.com.innova.legalite.icraserver.dto.SistemParametreDto;
 
-
-//@FeignClient(name="currency-exchange", url="localhost:8000")
 @FeignClient(name="admin-server")
 public interface AdminServiceProxy {
 	
