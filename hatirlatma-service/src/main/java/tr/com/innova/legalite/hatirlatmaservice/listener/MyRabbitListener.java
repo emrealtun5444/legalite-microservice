@@ -7,7 +7,7 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
-import tr.com.innova.legalite.hatirlatmaservice.dto.Notification;
+import tr.com.innova.legalite.servicecommon.dto.Notification;
 
 @Component
 public class MyRabbitListener {

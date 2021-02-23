@@ -1,10 +1,9 @@
 package tr.com.innova.legalite.icraserver.proxy;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import tr.com.innova.legalite.icraserver.dto.SistemParametreDto;
+import tr.com.innova.legalite.servicecommon.dto.SistemParametreDto;
 
 @FeignClient(name="admin-server")
 public interface AdminServiceProxy {

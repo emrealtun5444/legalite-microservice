@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tr.com.innova.legalite.icraserver.dto.IcraDto;
-import tr.com.innova.legalite.icraserver.dto.Notification;
-import tr.com.innova.legalite.icraserver.dto.SistemParametreDto;
 import tr.com.innova.legalite.icraserver.proxy.AdminServiceProxy;
+import tr.com.innova.legalite.servicecommon.dto.Notification;
+import tr.com.innova.legalite.servicecommon.dto.SistemParametreDto;
 
 @Service
 public class IcraServiceImp implements IcraService {

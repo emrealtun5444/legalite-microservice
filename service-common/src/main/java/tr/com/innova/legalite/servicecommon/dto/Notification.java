@@ -1,4 +1,4 @@
-package tr.com.innova.legalite.icraserver.dto;
+package tr.com.innova.legalite.servicecommon.dto;
 
 
 import lombok.AllArgsConstructor;
