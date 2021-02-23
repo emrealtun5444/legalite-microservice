@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/admin-server/admin-server.iml" filepath="$PROJECT_DIR$/admin-server/admin-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hatirlatma-service/hatirlatma-service.iml" filepath="$PROJECT_DIR$/hatirlatma-service/hatirlatma-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/icra-server/icra-server.iml" filepath="$PROJECT_DIR$/icra-server/icra-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/legalite-microservice.iml" filepath="$PROJECT_DIR$/.idea/legalite-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/naming-server/naming-server.iml" filepath="$PROJECT_DIR$/naming-server/naming-server.iml" />
