@@ -17,10 +17,10 @@ public class ApiGatewayConfiguration {
 								.addRequestHeader("MyHeader", "MyURI")
 								.addRequestParameter("Param", "MyValue"))
 						.uri("http://httpbin.org:80"))
-				.route(p -> p.path("/icra-server/**")
-						.uri("lb://icra-server"))
-				.route(p -> p.path("/admin-server/**")
-						.uri("lb://admin-server"))
+				.route(p -> p.path("/icra-service/**")
+						.uri("lb://icra-service"))
+				.route(p -> p.path("/admin-service/**")
+						.uri("lb://admin-service"))
 				.route(p -> p.path("/currency-conversion-new/**")
 						.filters(f -> f.rewritePath(
 								"/currency-conversion-new/(?<segment>.*)", 

@@ -2,14 +2,15 @@ version: '3.7'
 
 services:
 
-  currency-exchange:
-    image: in28min/mmv2-currency-exchange-service:0.0.1-SNAPSHOT
+  admin-service:
+    image: legalite/mmv2-admin-service:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
-      - "8000:8000"
+      - "8100:8100"
     networks:
-      - currency-network
+      - legalite-network
     depends_on:
+      - config-server
       - naming-server
       - rabbitmq
     environment:
@@ -19,14 +20,33 @@ services:
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_ZIPKIN_SENDER_TYPE: rabbit
 
-  currency-conversion:
-    image: in28min/mmv2-currency-conversion-service:0.0.1-SNAPSHOT
+  hatirlatma-service:
+    image: legalite/mmv2-hatirlatma-service:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
-      - "8100:8100"
+      - "8300:8300"
     networks:
-      - currency-network
+      - legalite-network
     depends_on:
+      - config-server
+      - naming-server
+      - rabbitmq
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
+      RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      
+  icra-service:
+    image: legalite/mmv2-icra-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8200:8200"
+    networks:
+      - legalite-network
+    depends_on:
+      - config-server
       - naming-server
       - rabbitmq
     environment:
@@ -37,12 +57,12 @@ services:
       SPRING_ZIPKIN_SENDER_TYPE: rabbit
 
   api-gateway:
-    image: in28min/mmv2-api-gateway:0.0.1-SNAPSHOT
+    image: legalite/mmv2-api-gateway:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8765:8765"
     networks:
-      - currency-network
+      - legalite-network
     depends_on:
       - naming-server
       - rabbitmq
@@ -53,13 +73,23 @@ services:
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_ZIPKIN_SENDER_TYPE: rabbit
 
+
+
+  config-server:
+    image: legalite/mmv2-config-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8888:8888"
+    networks:
+      - legalite-network
+
   naming-server:
-    image: in28min/mmv2-naming-server:0.0.1-SNAPSHOT
+    image: legalite/mmv2-naming-server:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8761:8761"
     networks:
-      - currency-network
+      - legalite-network
 
 #docker run -p 9411:9411 openzipkin/zipkin:2.23
 
@@ -69,7 +99,7 @@ services:
     ports:
       - "9411:9411"
     networks:
-      - currency-network
+      - legalite-network
     environment:
       RABBIT_URI: amqp://guest:guest@rabbitmq:5672
     depends_on:
@@ -82,8 +112,8 @@ services:
       - "5672:5672"
       - "15672:15672"
     networks:
-      - currency-network
+      - legalite-network
 
 
 networks:
-  currency-network:
+  legalite-network:
