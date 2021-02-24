@@ -1,10 +1,10 @@
-package tr.com.innova.legalite.icraservice;
+package tr.com.innova.legalite.adminservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IcraServerApplicationTests {
+class AdminServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

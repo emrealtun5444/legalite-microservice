@@ -1,4 +1,4 @@
-package tr.com.innova.legalite.icraservice;
+package tr.com.innova.legalite.adminservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
-public class IcraServerApplication {
+public class AdminServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IcraServerApplication.class, args);
+		SpringApplication.run(AdminServiceApplication.class, args);
 	}
 
 }
