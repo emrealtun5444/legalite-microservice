@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tr.com.innova.legalite.adminservice.dto.SistemParametreDto;
+import tr.com.innova.legalite.servicecommon.dto.SistemParametreDto;
 
 @RequestMapping("/admin-service")
 @RestController
